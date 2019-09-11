@@ -10,15 +10,25 @@ import something from '../images/something.gif';
 let Tamagotchi = (props) => {
 
     const imageArray = [fox, glob, scarecrow, giphy, franco, something];
-    const tamagotchiStyle = {
+    const tamagotchiImageStyle = {
+        width: "auto",
+        height: "20vw",
+        margin: "5px"
+    }
+    const tamagotchiBoxStyle = {
         width: "20vw",
-        height: "auto"
+        height: "auto",
+        display: "inline-block",
+        textAlign: "center",
+        border: "1px solid black",
+        padding: '5px'
+
     }
     return (
-        <div>
+        <div style={tamagotchiBoxStyle}>
             <h2>{props.name} - {props.formattedAge} old.</h2>
             <h5>A {props.gender} tamagotchi.</h5>
-            <img style={tamagotchiStyle} src={imageArray[Math.floor(Math.random() * (5 - 0))]} />
+            <img style={tamagotchiImageStyle} src={imageArray[Math.floor(Math.random() * (5 - 0))]} />
             <p>{props.description}</p>
         </div>
     )

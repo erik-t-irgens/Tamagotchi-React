@@ -29,7 +29,7 @@ class App extends React.Component {
     componentDidMount() {
         this.ageTimeUpdateTimer = setInterval(() =>
             this.updateTamagotchiAge(),
-            60000
+            5000
         );
     }
 
@@ -40,7 +40,7 @@ class App extends React.Component {
     updateTamagotchiAge() {
         let newMasterTamagotchiList = this.state.masterTamagotchiList.slice();
         newMasterTamagotchiList.forEach((tamagotchi) =>
-            tamagotchi.formattedAge = (tamagotchi.TimeOpen).fromNow(true)
+            tamagotchi.formattedAge = (tamagotchi.timeOpen).fromNow(true)
         );
         this.setState({ masterTamagotchiList: newMasterTamagotchiList })
     }
