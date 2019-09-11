@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Tamagotchi = () => {
+let Tamagotchi = (props) => {
     return (
         <div>
             <h2>{props.name} - {props.formattedAge} old.</h2>

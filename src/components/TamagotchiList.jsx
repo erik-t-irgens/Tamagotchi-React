@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tamagotchi from './Tamagotchi';
+import { v4 } from 'uuid';
 
-const TamagotchiList = props => {
+let TamagotchiList = (props) => {
     return (
         <div>
-            {props.TamagotchiList.map((tamagotchi, index) =>
+            {props.tamagotchiList.map((tamagotchi) =>
                 <Tamagotchi name={tamagotchi.name}
                     gender={tamagotchi.gender}
                     description={tamagotchi.description}
                     formattedAge={tamagotchi.formattedAge}
-                    key={tamagotchi.index} />
+                    key={tamagotchi.id} />
             )}
         </div>
     );

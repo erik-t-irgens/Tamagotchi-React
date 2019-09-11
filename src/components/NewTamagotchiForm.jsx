@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import Moment from 'moment';
 
-const newTamagotchiForm = (props) => {
+let NewTamagotchiForm = (props) => {
     let _name = null;
     let _gender = null;
     let _description = null;
@@ -18,7 +18,7 @@ const newTamagotchiForm = (props) => {
 
     return (
         <div>
-            <form onSubmit={}>
+            <form onSubmit={handleNewTamagotchiFormSubmission}>
                 <input
                     type='text'
                     id='name'
@@ -34,9 +34,10 @@ const newTamagotchiForm = (props) => {
                     id='description'
                     placeholder='Describe your Tamagotchi!'
                     ref={(input) => { _description = input; }} />
+                <button type='submit'>create!</button>
             </form>
         </div>
     )
 }
 
-export default newTamagotchiForm;
+export default NewTamagotchiForm;
