@@ -55,7 +55,13 @@ module.exports = {
                         name: 'images/[hash]-[name].[ext]'
                     }
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+              }
+
+
         ]
     },
 

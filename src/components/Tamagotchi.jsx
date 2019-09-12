@@ -18,14 +18,14 @@ let Tamagotchi = (props) => {
     const tamagotchiBoxStyle = {
         width: "20vw",
         height: "auto",
-        display: "inline-block",
         textAlign: "center",
         border: "1px solid black",
         padding: '5px'
 
     }
     return (
-        <div style={tamagotchiBoxStyle}>
+        <div className ='card' style={tamagotchiBoxStyle}>
+
             <h2>{props.name} - {props.formattedAge} old.</h2>
             <h5>A {props.gender} tamagotchi.</h5>
             <img style={tamagotchiImageStyle} src={imageArray[Math.floor(Math.random() * (5 - 0))]} />

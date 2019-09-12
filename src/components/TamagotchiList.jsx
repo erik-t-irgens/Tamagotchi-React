@@ -8,6 +8,7 @@ let TamagotchiList = (props) => {
         <div>
             {props.tamagotchiList.map((tamagotchi) =>
                 <Tamagotchi name={tamagotchi.name}
+                
                     gender={tamagotchi.gender}
                     description={tamagotchi.description}
                     formattedAge={tamagotchi.formattedAge}
