@@ -25,7 +25,7 @@ let Tamagotchi = (props) => {
     }
     return (
         <div className ='card' style={tamagotchiBoxStyle}>
-
+            <button className="btn btn-outline-dark btn-lg" onClick={() => props.removeTamagotchi(props.id)}>Delete</button>
             <h2>{props.name} - {props.formattedAge} old.</h2>
             <h5>A {props.gender} tamagotchi.</h5>
             <img style={tamagotchiImageStyle} src={imageArray[Math.floor(Math.random() * (5 - 0))]} />

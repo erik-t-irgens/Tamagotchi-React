@@ -15,6 +15,13 @@ class App extends React.Component {
             masterTamagotchiList: []
         };
         this.handleAddingNewTamagotchiToList = this.handleAddingNewTamagotchiToList.bind(this);
+        this.removeTamagotchi = this.removeTamagotchi.bind(this);
+    }
+
+    removeTamagotchi (id){
+        const newMasterTamagotchiList = this.state.masterTamagotchiList.slice();
+        newMasterTamagotchiList.splice(id, 1);
+        this.setState({masterTamagotchiList: newMasterTamagotchiList})
     }
 
     handleAddingNewTamagotchiToList(newTamagotchi) {
@@ -46,6 +53,7 @@ class App extends React.Component {
     }
 
 
+
     render() {
         return (
             <div>
@@ -53,7 +61,7 @@ class App extends React.Component {
                 <Switch>
 
                     <Route exact path='/' />
-                    <Route exact path='/TamagotchiList' render={() => <TamagotchiList tamagotchiList={this.state.masterTamagotchiList} />} />
+                    <Route exact path='/TamagotchiList' render={() => <TamagotchiList tamagotchiList={this.state.masterTamagotchiList} removeTamagotchi = {this.removeTamagotchi} />} />
                     <Route exact path='/NewTamagotchi' render={() => <NewTamagotchiForm onNewTamagotchiCreation={this.handleAddingNewTamagotchiToList} />} />
                 </Switch>
             </div>

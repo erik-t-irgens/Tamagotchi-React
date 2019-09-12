@@ -12,7 +12,10 @@ let TamagotchiList = (props) => {
                     gender={tamagotchi.gender}
                     description={tamagotchi.description}
                     formattedAge={tamagotchi.formattedAge}
-                    key={tamagotchi.id} />
+                    key={tamagotchi.id}
+                    removeTamagotchi={props.removeTamagotchi} 
+                    />
+                    
             )}
         </div>
     );
